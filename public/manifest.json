@@ -81,10 +81,17 @@
       "src": "mstile-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    },
+    {
+      "src": "maskable_icon.png",
+      "sizes": "196x196",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#0078D4",
-  "background_color": "#407855"
+  "background_color": "#407855",
+  "orientation": "landscape "
 }

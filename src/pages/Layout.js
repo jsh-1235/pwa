@@ -115,7 +115,7 @@ export default function Layout() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="sm">
-        <div component="div" style={{ backgroundColor: "#cfe8fc", height: "100vh", marginTop: "0px" }}>
+        <div component="div" style={{ backgroundColor: "#448aff", height: "100vh", marginTop: "0px" }}>
           <Grid container spacing={4}>
             <Grid item xs={12} sm={12}>
               <Paper className={classes.paper}>
