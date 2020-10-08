@@ -24,11 +24,19 @@ const useStyles = makeStyles((theme) => ({
   square: {
     color: theme.palette.getContrastText(deepOrange[500]),
     backgroundColor: deepOrange[500],
+    width: "auto",
+    height: "auto",
   },
   rounded: {
     color: "#fff",
     backgroundColor: green[500],
+    width: "64px",
+    height: "64px",
   },
+  content:{
+      padding:"0.5em",
+      fontSize:"74pt"
+  }
 }));
 
 const Content = () => {
@@ -63,9 +71,9 @@ const Content = () => {
           <ListItem key={value} button>
             <ListItemAvatar>
               {/* <Avatar alt={`Avatar n°${value + 1}`} src={`/static/images/avatar/man_${value + 1}.png`} />               */}
-              <Avatar className={classes.square} variant="square" alt={`Avatar n°${value + 1}`} src={images[value]} />
+              <Avatar className={classes.rounded} variant="rounded" alt={`Avatar n°${value + 1}`} src={images[value]} />
             </ListItemAvatar>
-            <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
+            <ListItemText className={classes.content} id={labelId} primary={`Line item ${value + 1}`} />
             <ListItemSecondaryAction>
               <Checkbox edge="end" onChange={handleToggle(value)} checked={checked.indexOf(value) !== -1} inputProps={{ "aria-labelledby": labelId }} />
             </ListItemSecondaryAction>
