@@ -7,6 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Checkbox from "@material-ui/core/Checkbox";
 import Avatar from "@material-ui/core/Avatar";
+import Tooltip from "@material-ui/core/Tooltip";
 
 import { deepOrange, green } from "@material-ui/core/colors";
 
@@ -15,6 +16,8 @@ import man_2 from "../images/man_2.png";
 import man_3 from "../images/man_3.png";
 import man_4 from "../images/man_4.png";
 import man_5 from "../images/man_5.png";
+
+import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,10 +36,10 @@ const useStyles = makeStyles((theme) => ({
     width: "64px",
     height: "64px",
   },
-  content:{
-      padding:"0.5em",
-      fontSize:"74pt"
-  }
+  content: {
+    padding: "0.5em",
+    fontSize: "74pt",
+  },
 }));
 
 const Content = () => {
@@ -58,6 +61,12 @@ const Content = () => {
     }
 
     setChecked(newChecked);
+
+    console.log(newChecked);
+  };
+
+  const handleClick = (value) => () => {
+    console.log(value)
   };
 
   return (
@@ -65,14 +74,16 @@ const Content = () => {
       {[0, 1, 2, 3, 4].map((value) => {
         const labelId = `checkbox-list-secondary-label-${value}`;
 
-        console.log(value);
+        //console.log(value);
 
         return (
-          <ListItem key={value} button>
-            <ListItemAvatar>
-              {/* <Avatar alt={`Avatar n°${value + 1}`} src={`/static/images/avatar/man_${value + 1}.png`} />               */}
-              <Avatar className={classes.rounded} variant="rounded" alt={`Avatar n°${value + 1}`} src={images[value]} />
-            </ListItemAvatar>
+          <ListItem button key={value} onClick={handleClick(value)}>
+            <Tooltip title={`Avatar ${value + 1}`}>
+              <ListItemAvatar>
+                {/* <Avatar alt={`Avatar n°${value + 1}`} src={`/static/images/avatar/man_${value + 1}.png`} />               */}
+                <Avatar className={classes.rounded} variant="rounded" alt={`Avatar n°${value + 1}`} src={images[value]} />
+              </ListItemAvatar>
+            </Tooltip>
             <ListItemText className={classes.content} id={labelId} primary={`Line item ${value + 1}`} />
             <ListItemSecondaryAction>
               <Checkbox edge="end" onChange={handleToggle(value)} checked={checked.indexOf(value) !== -1} inputProps={{ "aria-labelledby": labelId }} />
