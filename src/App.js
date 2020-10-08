@@ -6,6 +6,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Gallery from "./pages/Gallery";
+import Layout from "./pages/Layout";
 
 //==================================================================
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
@@ -167,6 +168,12 @@ function App() {
                   </ListItemIcon>
                   <ListItemText primary="Gallery" />
                 </ListItem>
+                <ListItem button component={Link} to="/layout">
+                  <ListItemIcon>
+                    <InboxIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Layout" />
+                </ListItem>
               </List>
             </Drawer>
           </header>
@@ -175,6 +182,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/gallery" component={Gallery} />
+              <Route path="/layout" component={Layout} />
               <Route component={NotFound} />
             </Switch>
           </main>
