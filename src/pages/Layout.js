@@ -6,13 +6,8 @@ import Container from "@material-ui/core/Container";
 
 const useStyles = (theme) => ({
   root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
+    fontSize: 64,
+  }
 });
 
 class Layout extends React.Component {
@@ -32,7 +27,7 @@ class Layout extends React.Component {
         <CssBaseline />
         <Container maxWidth="sm">
           <div component="div" style={{ backgroundColor: "#cfe8fc", height: "80vh", marginTop: "0px" }} >
-            <p>hi</p>
+            <p className={classes.root}>hi</p>
           </div>
         </Container>
       </React.Fragment>
