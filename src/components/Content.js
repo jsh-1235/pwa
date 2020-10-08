@@ -17,8 +17,6 @@ import man_3 from "../images/man_3.png";
 import man_4 from "../images/man_4.png";
 import man_5 from "../images/man_5.png";
 
-import EmojiPeopleIcon from "@material-ui/icons/EmojiPeople";
-
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
