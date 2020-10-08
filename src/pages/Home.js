@@ -86,15 +86,14 @@ class Home extends React.Component {
     this.state = {
       title: "Home",
     };
-  }
+  }    
 
   render() {
-    const { classes } = this.props;
-
+    const { classes } = this.props;    
+    
     return (
       <div>
-        <Greeting name={this.state.title} />
-
+        <Greeting name={this.state.title} />        
         <div className={classes.root}>
           <Grid container spacing={1}>
             <Grid item xs={12}>

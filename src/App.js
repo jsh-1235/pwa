@@ -120,7 +120,30 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+// function gtmetrix() {
+//   const scripts = document.getElementsByTagName("script");
+
+//   const scriptsObj = [...scripts]
+//     .map((script) => script.src)
+//     .filter((src) => src !== "")
+//     .reduce((obj, value) => {
+//       if (obj.hasOwnProperty(value)) {
+//         obj[value] = obj[value] + 1;
+//       } else {
+//         obj[value] = 0;
+//       }
+//       return obj;
+//     }, {});
+
+//   Object.keys(scriptsObj).forEach((key) => {
+//     if (scriptsObj[key] > 0) delete scriptsObj[key];
+//     console.log(key);
+//   });
+// }
+
 function App() {
+  //gtmetrix();
+
   const classes = useStyles();
 
   const [open, setOpen] = React.useState(false);
@@ -132,6 +155,8 @@ function App() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  //console.log("getElementsByTagName : " + document.getElementsByTagName("*").length);
 
   return (
     <ThemeProvider theme={theme}>
