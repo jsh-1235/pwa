@@ -70,6 +70,12 @@ const useStyles = (theme) => ({
     width: 200,
     height: 600,
   },
+  divRoot: {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    overflow: "hidden",
+  },
 });
 
 class Home extends React.Component {
@@ -124,62 +130,64 @@ class Home extends React.Component {
           </div>
         </div>
         <hr />
-        <Grid container spacing={1}>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <div>
+        <div className={classes.divRoot}>
+          <Grid container spacing={1} style={{ width: "50%" }}>
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <div>
+                  <Button variant="outlined" color="secondary">
+                    Secondary
+                  </Button>
+                  <Button variant="outlined" color="secondary">
+                    Secondary
+                  </Button>
+                </div>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>
                 <Button variant="outlined" color="secondary">
                   Secondary
                 </Button>
+              </Paper>
+            </Grid>
+            <Grid item xs={6}>
+              <Paper className={classes.paper}>
                 <Button variant="outlined" color="secondary">
                   Secondary
                 </Button>
-              </div>
-            </Paper>
+              </Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>
+                <Button variant="outlined" color="secondary">
+                  Secondary
+                </Button>
+              </Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>
+                <Button variant="outlined" color="secondary">
+                  Secondary
+                </Button>
+              </Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>
+                <Button variant="outlined" color="secondary">
+                  Secondary
+                </Button>
+              </Paper>
+            </Grid>
+            <Grid item xs={3}>
+              <Paper className={classes.paper}>
+                <Button variant="outlined" color="secondary">
+                  Secondary
+                </Button>
+              </Paper>
+            </Grid>
           </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>
-              <Button variant="outlined" color="secondary">
-                Secondary
-              </Button>
-            </Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper className={classes.paper}>
-              <Button variant="outlined" color="secondary">
-                Secondary
-              </Button>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <Button variant="outlined" color="secondary">
-                Secondary
-              </Button>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <Button variant="outlined" color="secondary">
-                Secondary
-              </Button>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <Button variant="outlined" color="secondary">
-                Secondary
-              </Button>
-            </Paper>
-          </Grid>
-          <Grid item xs={3}>
-            <Paper className={classes.paper}>
-              <Button variant="outlined" color="secondary">
-                Secondary
-              </Button>
-            </Paper>
-          </Grid>
-        </Grid>
+        </div>
       </div>
     );
   }

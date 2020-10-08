@@ -52,7 +52,7 @@ const marks = [
   },
 ];
 
-function valuetext(value) {
+function valueText(value) {
   return `${value}°C`;
 }
 
@@ -67,6 +67,8 @@ export default function Layout() {
   const [value, setValue] = React.useState(0);
 
   const [count, setCount] = React.useState(0);
+
+  const [restrict, setRestrict] = React.useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -169,9 +171,9 @@ export default function Layout() {
             <Grid item xs={12} sm={12}>
               <Paper className={classes.paper}>
                 <Typography id="discrete-slider-custom" gutterBottom>
-                  Custom marks : {count}
+                  Custom marks : {restrict}
                 </Typography>
-                <Slider defaultValue={20} getAriaValueText={valuetext} aria-labelledby="discrete-slider-custom" step={10} valueLabelDisplay="auto" marks={marks} onChange={() => setCount(count + 1)} />
+                <Slider defaultValue={20} valueLabelFormat={valueLabelFormat} getAriaValueText={valueText} aria-labelledby="discrete-slider-restrict" step={null} valueLabelDisplay="auto" marks={marks} onChange={(event, newValue) => setRestrict(newValue)} />
               </Paper>
             </Grid>
 
